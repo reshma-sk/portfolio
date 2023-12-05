@@ -276,6 +276,7 @@ span{
 }
 .portfolio h2{
   margin-bottom: 4rem;;
+ 
 }
 .portfolio-container{
   
@@ -294,12 +295,14 @@ span{
 }
 .portfolio-box img{
   width: 100%;
+  height: auto;
   transform: .5s ease;
   -webkit-transform: .5s ease;
   -moz-transform: .5s ease;
   -ms-transform: .5s ease;
   -o-transform: .5s ease;
 }
+
 .portfolio-box:hover img{
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
@@ -320,6 +323,7 @@ span{
   flex-direction: column;
   text-align: center; 
   padding: 0 4rem;
+  
   transform: translateY(100%);
   -webkit-transform: translateY(100%);
   -moz-transform: translateY(100%);
@@ -337,13 +341,29 @@ span{
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
+  color: black;
+}
+.portfolio-box:hover .portfolio-layer p {
+  background: var(--second--bg--color);
+  color:var(--text--color);
+  font-weight: normal;
+  padding: .5rem;
+  border: .2rem solid var(--main--color);
+  box-shadow: 0 0 1rem var(--main--color);
+  border-radius: 4rem;
+  -webkit-border-radius: 4rem;
+  -moz-border-radius: 4rem;
+  -ms-border-radius: 4rem;
+  -o-border-radius: 4rem;
 }
 .portfolio-layer h4{
   font-size: 3rem;
+  
 }
 .portfolio-layer p{
   font-size: 1.6rem;
   margin: 3rem 0 1rem;
+  
 }
 .portfolio-layer a{
   border-radius: 50%;
@@ -352,7 +372,7 @@ span{
   align-items: center;
   width: 5rem;
   height: 5rem;
-  background: var(--text--color);
+  
 }
 .portfolio-layer a i{
   font-size: 2rem;
@@ -451,6 +471,9 @@ span{
   .portfolio{
     padding-bottom: 7rem;
    }
+  .portfolio-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
   .contact{
     min-height: auto;
 
@@ -528,6 +551,7 @@ span{
 
 }
 @media (max-width:617px){
+  
   .portfolio-container{
     grid-template-columns: 1fr;
   }
