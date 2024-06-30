@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +27,6 @@ section {
   min-height: 100vh;
   padding: 10rem 9% 2rem;
 }
-
 .header{
   position: fixed;
   top: 0;
@@ -204,9 +202,11 @@ span{
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+
 .heading{
   text-align: center;
   font-size: 4.5rem;
+  
 }
 .about-content h2{
   text-align: left;
@@ -229,11 +229,13 @@ span{
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  border: none;
 }
 .services-container .services-box{
   flex: 1 1 30rem;
   background: var(--second--bg--color);
-  padding: 3rem 2rem 4rem;
+  padding: 2rem 2rem 4rem;
+  box-shadow: 5px 5px .5rem #0ef;
   border-radius: 2rem;
   -webkit-border-radius: 2rem;
   -moz-border-radius: 2rem;
@@ -254,6 +256,10 @@ span{
   -moz-transform: scale(1.02);
   -ms-transform: scale(1.02);
   -o-transform: scale(1.02);
+  box-shadow: none;
+}
+.services-box span{
+  font-size: 1.5rem;
 }
 .services-box i{
   font-size: 7rem;
@@ -263,23 +269,18 @@ span{
   font-size: 2.6rem;
 }
 .services-box p{
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   margin: 1rem 0 3rem;
 }
 .portfolio{
   background: var(--second--bg--color);
   margin-bottom: 5rem;
 }
-.portfolio{
-  background: var(--second--bg--color);
-
-}
-.portfolio h2{
-  margin-bottom: 4rem;;
- 
+.portfolio h2 {
+  margin-bottom: 2rem;
+  ;
 }
 .portfolio-container{
-  
   display: grid;
   grid-auto-columns: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
@@ -287,96 +288,32 @@ span{
   gap: 2.5rem;
 }
 .portfolio-container .portfolio-box{
+  display: flex;
+  flex-direction: column;
   position: relative;
   border-radius: 2rem;
   box-shadow: 0 0 1rem var(--bg--color);
   overflow: hidden;
-  display: flex;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  width: 370px;
+  height: 80%;
+  box-shadow: 6px 6px 0.5rem #0ef;
 }
-.portfolio-box img{
+.portfolio-box .project-image{
   width: 100%;
-  height: auto;
-  transform: .5s ease;
-  -webkit-transform: .5s ease;
-  -moz-transform: .5s ease;
-  -ms-transform: .5s ease;
-  -o-transform: .5s ease;
+  height: 160px;
 }
-
-.portfolio-box:hover img{
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-}
-.portfolio-box .portfolio-layer {
-  position: absolute;
-  height: 100%;
-  bottom: 0;
+.portfolio-box .project-image img{
   width: 100%;
-  left: 0;
-  background: linear-gradient(rgba(0, 0, 0,.1)var(--main--color));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center; 
-  padding: 0 4rem;
-  
-  transform: translateY(100%);
-  -webkit-transform: translateY(100%);
-  -moz-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  -o-transform: translateY(100%);
-  transition: .5s ease;
-  -webkit-transition: .5s ease;
-  -moz-transition: .5s ease;
-  -ms-transition: .5s ease;
-  -o-transition: .5s ease;
+  height: 100%;  
 }
-.portfolio-box:hover .portfolio-layer{
-  transform: translateY(0);
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  color: black;
-}
-.portfolio-box:hover .portfolio-layer p {
-  background: var(--second--bg--color);
-  color:var(--text--color);
-  font-weight: normal;
-  padding: .5rem;
-  border: .2rem solid var(--main--color);
-  box-shadow: 0 0 1rem var(--main--color);
-  border-radius: 4rem;
-  -webkit-border-radius: 4rem;
-  -moz-border-radius: 4rem;
-  -ms-border-radius: 4rem;
-  -o-border-radius: 4rem;
-}
-.portfolio-layer h4{
-  font-size: 3rem;
-  
-}
-.portfolio-layer p{
-  font-size: 1.6rem;
-  margin: 3rem 0 1rem;
-  
-}
-.portfolio-layer a{
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 5rem;
-  height: 5rem;
-  
-}
-.portfolio-layer a i{
-  font-size: 2rem;
-  background: var(--main--color);
+.portfolio-box .project-link{
+  margin-top: 1rem;
+  width: 100%;
+  height: 100%;  
 }
 .contact h2{
   margin-bottom: 3rem;
@@ -537,7 +474,7 @@ span{
   }
   .about img{
     width: 70vw;
-    margin-top: 4rem; 
+    margin-top: 4rem;
   }
   .services h2{
     margin-bottom: 2rem;
@@ -548,6 +485,9 @@ span{
   .portfolio-container{
     grid-template-columns: repeat(2, 1fr);
   }
+    .portfolio-container .portfolio-box{
+      width: 340px;
+    }
 
 }
 @media (max-width:617px){
