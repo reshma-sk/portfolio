@@ -298,22 +298,37 @@ span{
   -moz-border-radius: 2rem;
   -ms-border-radius: 2rem;
   -o-border-radius: 2rem;
-  width: 370px;
-  height: 80%;
+  width: 390px;
+  height: 90%;
   box-shadow: 6px 6px 0.5rem #0ef;
 }
 .portfolio-box .project-image{
   width: 100%;
-  height: 160px;
+  height: 140px;
 }
 .portfolio-box .project-image img{
   width: 100%;
   height: 100%;  
 }
 .portfolio-box .project-link{
-  margin-top: 1rem;
+  display: flex;
+  margin-top: .2rem;
   width: 100%;
   height: 100%;  
+}
+.social-media .project-info{
+  display: flex;
+  flex-direction: column;
+}
+.skills .social-media{
+  margin-top: 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+.skills .social-media a{
+  width: 6rem;
+  height: 6rem;
+  
 }
 .contact h2{
   margin-bottom: 3rem;
@@ -485,15 +500,27 @@ span{
   .portfolio-container{
     grid-template-columns: repeat(2, 1fr);
   }
-    .portfolio-container .portfolio-box{
+  .portfolio-container .portfolio-box{
       width: 340px;
-    }
+  }
+  .skills .social-media{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 
 }
 @media (max-width:617px){
   
   .portfolio-container{
     grid-template-columns: 1fr;
+  }
+  .skills .social-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
   }
 }
 @media(max-width:450px){
@@ -504,6 +531,13 @@ span{
     width: 100%;
 
   }
+  .skills .social-media {
+      display: flex;
+      flex-direction: column;
+  
+      align-items: center;
+      gap: 2rem;
+  }
 }
 @media(max-width:365px){
   .home-img img{
@@ -511,6 +545,13 @@ span{
   }
   .about-img img{
     width: 90vw;
+  }
+  .skills .social-media {
+      display: flex;
+      flex-direction: column;
+  
+      align-items: center;
+      gap: 2rem;
   }
   .footer{
     flex-direction: column-reverse;
