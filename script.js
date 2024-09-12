@@ -13,11 +13,14 @@ let navLinks = document.querySelectorAll('header nav a');
 
 window.onscroll = () => {
     sections.forEach(sec => {
+        
         let top = window.scrollY;
-        //console.log(top);
-        //console.log(sec.offsetTop);
+        console.log(top);
+        
         let offset = sec.offsetTop - 150;
+        console.log(offset);
         let height = sec.offsetHeight;
+        console.log(height);
         let id = sec.getAttribute('id');
 
         if (top >= offset && top < offset + height) {
@@ -33,8 +36,8 @@ window.onscroll = () => {
     let header = document.querySelector('header');
     header.classList.toggle('sticky',window.scrollY > 100);
     /*==============remove toggle icon and navbar when click navbar link(scroll)======== */
-  menuIcon.classList.remove('bx-x');  
-  navbar.classList.remove('active');
+    menuIcon.classList.remove('bx-x');  
+    navbar.classList.remove('active');
 
 };
 /*==============scroll reveal=================*/
