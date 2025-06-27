@@ -1,45 +1,48 @@
-import React from 'react'
-import { FaGithub } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import {GITHUB} from '../utils/constants'
-import { FaMobile } from 'react-icons/fa';
-import { EMAIL } from '../utils/constants';
-import profile from '../assets/image/profile.jpg'
-import {MOBILE} from '../utils/constants'
-import { LINKEDIN_URL } from '../utils/constants';
-import { FaMailBulk } from 'react-icons/fa';
+import React from 'react';
+import { FaGithub, FaLinkedin, FaMailBulk, FaMobile } from 'react-icons/fa';
+import profile from '../assets/image/profile.jpg';
+import { GITHUB, LINKEDIN_URL, EMAIL, MOBILE } from '../utils/constants';
 
 const Body = () => {
   return (
-    <>
-      <div className="flex justify-around mt-[10rem] w-full mx-auto leading-10">
-        <div>
-          <h2 className="font-bold text-lg">Hello, I am</h2>
-          <h1 className="font-bold text-xl">Reshma Shaik</h1>
-          <h3>
-            <span className="font-bold text-xl">Frontend Developer</span>
-          </h3>
-          <p className="text-lg">
-            Passionate about building accessible web apps that user loves!
+    <main className="flex flex-col items-center justify-center w-full px-6 mt-20 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+      {/* Main Hero Section */}
+      <section className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mx-auto gap-10 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+        {/* Text Content */}
+        <div className="text-center md:text-left leading-10 mt-2">
+          <h2 className="font-semibold text-lg">Hello, I am</h2>
+          <h1 className="text-3xl font-bold">Reshma Shaik</h1>
+          <h3 className="text-xl font-bold mt-2 f">Frontend Developer</h3>
+          <p className=" font-semibold  max-w-md mt-2">
+            Passionate about building accessible web apps that users love!
           </p>
         </div>
+
+        {/* Profile Image */}
         <img
           src={profile}
-          className="w-[20rem] border shadow-lg"
-          alt="my-pic"
+          className="w-80 rounded-lg border shadow-lg mt-6"
+          alt="Portrait of Reshma Shaik"
         />
-      </div>
-      <div className="flex gap-3 w-[6rem] ml-[11rem] absolute -mt-10">
-        <Link to={GITHUB}>
-          <FaGithub size={30} color="#000" />
-        </Link>
-        <Link to={LINKEDIN_URL}>
-          <FaLinkedin size={30} color="#000" />
-        </Link>
-      </div>
-    </>
-  );
-}
+      </section>
 
-export default Body
+      {/* Social Links */}
+      <div className="flex gap-4 mt-6">
+        <a href={GITHUB} target="_blank" rel="noopener noreferrer">
+          <FaGithub size={30} />
+        </a>
+        <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+          <FaLinkedin size={30} />
+        </a>
+       {/*  <a href={`mailto:${EMAIL}`}>
+          <FaMailBulk size={30} />
+        </a>
+        <a href={`tel:${MOBILE}`}>
+          <FaMobile size={30} /> 
+        </a>*/}
+      </div>
+    </main>
+  );
+};
+
+export default Body;

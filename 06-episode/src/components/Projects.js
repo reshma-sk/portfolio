@@ -1,184 +1,99 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { CODE_PEN } from '../utils/constants';
 import { FaGithub } from 'react-icons/fa';
-import { FOOD_APP } from '../utils/constants';
-import { VIDEO_STREAMING} from '../utils/constants';
-import { MOVIE_STREAMING } from '../utils/constants';
-import { YOUR_RECIPE } from '../utils/constants';
-import { GROCERY_LIST } from '../utils/constants';
-import recipe from '../assets/image/recipe.png'
-import grocery from '../assets/image/grocery.png'
-import codepen from '../assets/image/codepen.png'
-import video from '../assets/image/video.png'
-import food from '../assets/image/food.png'
-import movie from '../assets/image/movie.png'
+import {
+  FOOD_APP,
+  AUTH_APP,
+  MOVIE_STREAMING,
+  YOUR_RECIPE,  
+} from '../utils/constants';
+
+import recipe from '../assets/image/recipe.png';
+/* import grocery from '../assets/image/grocery.png';
+import codepen from '../assets/image/codepen.png';
+import video from '../assets/image/video.png'; */
+import food from '../assets/image/food.png';
+import movie from '../assets/image/movie.png';
+import jwt from '../assets/image/jwt.png';
+const projects = [
+  {
+    title: "Food Order App",
+    img: food,
+    link: FOOD_APP,
+    desc: `Namaste Food is a React-based food ordering app built with Parcel for fast builds and modern bundling. 
+    It features component-based architecture, state management using Redux Toolkit, and supports client-side routing. 
+    The app includes unit testing using Jest and React Testing Library. Optimized with features like HMR, 
+    tree shaking, code splitting, image optimization, and differential bundling for older browsers.`,
+    source: "https://github.com/reshma-sk/react-series-09",
+  },
+  {
+    title: "Movie Streaming App",
+    img: movie,
+    link: MOVIE_STREAMING,
+    desc: `Built a Netflix-inspired movie app with Firebase authentication, Tailwind CSS, and TMDB API. Integrated OpenAI to enable GPT-powered movie search. Managed state using Redux Toolkit with custom slices and hooks. Features include secure login/signup, responsive UI, autoplaying trailers,
+     protected routes, and environment-based config. Deployed to production with .env for API security.`,
+    source: "https://github.com/reshma-sk/netflix-gpt-react-app",
+  },
+  /* {
+    title: 'Video Streaming App',
+    img: video,
+    link: VIDEO_STREAMING,
+    desc: `YouTube clone with video listing, lazy loading, threaded comments, live chat (API polling), and search suggestions using caching & debouncing.`,
+    source: 'https://github.com/reshma-sk/video-streaming-app'
+  }, 
+  {
+    title: 'CodePen Clone',
+    img: codepen,
+    link: CODE_PEN,
+    desc: `A CodePen-style online editor built in React for HTML, CSS, and JavaScript live previews.`,
+    source: 'https://reshma-sk.github.io/codepen-reshma/'
+  },*/
+  {
+    title: "Authentication",
+    img:jwt,
+    link: AUTH_APP,
+    desc: `JWT Authentication System
+    Implemented a secure and seamless user authentication system with React and Node.js. Enhanced UX by enabling smooth token-based login with automatic refresh using HttpOnly cookies.
+    Improved performance via React lazy loading and optimized API endpoints for fast, scalable interactions.`,
+    source: "https://youtu.be/QkizgbGvB1A",
+  },
+  {
+    title: "Get Your Recipe",
+    img: recipe,
+    link: YOUR_RECIPE,
+    desc: `Recipe search app with ingredient and nutrition info using HTML, CSS, JS, and a third-party API.`,
+    source: "https://reshma-sk.github.io/Javascrip_get-recipe-App/",
+  },
+];
 
 const Projects = () => {
   return (
-    <div className="flex flex-wrap gap-2 justify-around items-center h-screen object-cover text-center">
-      <div className=" w-[40%] h-[300px] shadow-lg mt-3 border border-gray-600 ">
-        <h2 className="font-bold">Food Order App</h2>
-        <img src={food} alt="Food-App" className="w-[70%] h-[40%] mx-auto" />
-        <article className="h-[150px] overflow-y-auto">
-          <p>
-            <Link to={FOOD_APP}>
-              <FaGithub
-                className="mt-2 ml-2 bg-amber-200 rounded-lg"
-                size={30}
-                color="#000"
-              />
-            </Link>
-            Developed a config-driven web application using Swiggy's API to
-            display restaurant listings and menus. Implemented with JavaScript,
-            React, Tailwind, and Redux, utilizing functional components and
-            hooks for dynamic, scalable UI. Optimized for performance using
-            Parcel and Babel, ensuring efficient loading and rendering of
-            restaurant data.{" "}
-            <span className="bg-amber-200">
-              Source link:reshma-sk/react-series-09
-            </span>
-          </p>
-        </article>
-      </div>
-
-      <div className=" w-[40%] h-[300px] shadow-lg mt-3 border border-gray-600">
-        <h2 className="font-bold">Movie Streaming App</h2>
-        <img
-          src={movie}
-          alt="Movie-Streaming-App"
-          className="w-[70%] h-[40%] mx-auto"
-        />
-        <article className="h-[150px] overflow-y-auto">
-          <p>
-            <Link to={MOVIE_STREAMING}>
-              <FaGithub
-                className="mt-2 ml-2 bg-amber-500 rounded-lg"
-                size={30}
-                color="#000"
-              />
-            </Link>
-            Designed a responsive UI for a movie app using Open AI’s GPT API’s
-            to provide features like dynamic search with debouncing, and
-            genre-based filtering. Developed using React.js, Redux, and custom
-            hooks, with state management optimized for performance. Integrated
-            Parcel and Tailwind for a streamlined, modern user experience.
-            <span className="bg-amber-200">
-              Source link:reshma-sk/netflix-gpt-react-app{" "}
-            </span>
-          </p>
-        </article>
-      </div>
-
-      <div className=" w-[40%] h-[300px] shadow-lg mt-3 border border-gray-600">
-        <h2 className="font-bold">Video Streaming App</h2>
-        <img
-          src={video}
-          alt="Video-streaming"
-          className="w-[70%] h-[40%] mx-auto"
-        />
-        <article className="h-[150px] overflow-y-auto">
-          <p>
-            <Link to={VIDEO_STREAMING}>
-              <FaGithub
-                className="mt-2 ml-2 bg-amber-500 rounded-lg"
-                size={30}
-                color="#000"
-              />
-            </Link>
-            Features YouTube Clone: The project is a replica of the YouTube
-            platform, including its UI design and functionalities. YouTube Video
-            List: The app displays a paginated list of YouTube videos fetched
-            from the YouTube API. The list supports lazy loading to enhance
-            performance. Implemented YouTube Video Preview, Search Suggestions,
-            Optimized Search Using Caching and Debouncing, the app includes a
-            comments section that allows users to view and post comments on a
-            video. The comments are fetched from the YouTube API and are
-            displayed in a threaded view to enhance readability. Live Chat of
-            YouTube - Get Data Live, Update UI Continuously Developed with API
-            Polling: The app includes a live chat feature that allows users to
-            view and send messages in real-time. The chat is implemented using
-            API polling, which means that the app regularly makes API calls to
-            fetch new messages and updates the UI accordingly.
-            <span className="bg-amber-200">
-              Source ink: reshma-sk/video-streaming-app{" "}
-            </span>
-          </p>
-        </article>
-      </div>
-
-      <div className=" w-[40%] h-[300px] shadow-lg mt-3 border border-gray-600">
-        <h2 className="font-bold">CodePen</h2>
-        <img src={codepen} alt="Codepen" className="w-[70%] h-[40%] mx-auto" />
-        <article className="h-[150px] overflow-y-auto">
-          <p>
-            <Link to={CODE_PEN}>
-              <FaGithub
-                className="mt-2 ml-2 bg-amber-500"
-                size={30}
-                color="#000"
-              />
-            </Link>
-            A CodePen clone built with React.js, providing an online code editor
-            for HTML, CSS, and JavaScript.
-            <span className="bg-amber-200">
-              Sourse link:https://reshma-sk.github.io/codepen-reshma/
-            </span>
-          </p>
-        </article>
-      </div>
-
-      <div className=" w-[40%] h-[300px] shadow-lg mt-3 border border-gray-600">
-        <h2 className="font-bold">Get Your Recipe</h2>
-        <img
-          src={recipe}
-          alt="Recipe-app"
-          className="w-[70%] h-[40%] mx-auto"
-        />
-        <article className="h-[150px] overflow-y-auto">
-          <p>
-            <Link to={YOUR_RECIPE}>
-              <FaGithub
-                className="mt-2 ml-2 bg-amber-500"
-                size={30}
-                color="#000"
-              />
-            </Link>
-            This Recipe App using HTML,CSS and JAVASCRIPT, allows users to
-            search for recipes and view detailed information about each recipe,
-            including ingredients, cooking instructions, and nutrition facts.
-            The app fetches recipe data from a third-party API.
-            <span className='bg-amber-200'>Source link:https://reshma-sk.github.io/Javascrip_get-recipe-App/#</span>
-          </p>
-        </article>
-      </div>
-
-      <div className=" w-[40%] h-[300px] shadow-lg mt-3 border border-gray-600">
-        <h2 className="font-bold">Grocery Bud</h2>
-        <img
-          src={grocery}
-          alt="Grocery-app"
-          className="w-[70%] h-[40%] mx-auto"
-        />
-        <article className="h-[150px] overflow-y-auto">
-          <p>
-            <Link to={GROCERY_LIST}>
-              <FaGithub
-                className="mt-2 ml-2 bg-amber-500"
-                size={30}
-                color="#000"
-              />
-            </Link>
-            Streamline Your Shopping: The Ultimate Grocery List App Powered by
-            HTML, CSS, and JavaScript.
-            <span className="bg-amber-200">
-              Source ink:https://reshma-sk.github.io/grocery-list_javacript/
-            </span>
-          </p>
-        </article>
-      </div>
+    <div className="flex flex-wrap justify-center gap-6 px-6 py-10 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+      {projects.map((project, index) => (
+        <div
+          key={index}
+          className="w-full sm:w-[45%] md:w-[30%] border border-gray-300 dark:border-gray-700 rounded-xl shadow-md p-4 bg-white dark:bg-gray-800 flex flex-col justify-between"
+        >
+          <h2 className="font-bold text-xl mb-2">{project.title}</h2>
+          <img src={project.img} alt={project.title} className="w-[80%] h-[150px] object-cover mx-auto rounded" />
+          <div className="mt-3 h-[120px] overflow-y-auto text-sm">
+            <p>{project.desc}</p>
+          </div>
+          <div className="mt-3 flex justify-between items-center">
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
+              <FaGithub className="bg-amber-400 rounded p-1" size={32} color="#000" />
+            </a>
+            <a
+              href={project.source}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm underline bg-amber-200 px-2 py-1 rounded"
+            >
+              Source Link
+            </a>
+          </div>
+        </div>
+      ))}
     </div>
   );
-}
+};
 
-export default Projects
+export default Projects;

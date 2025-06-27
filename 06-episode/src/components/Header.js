@@ -1,32 +1,57 @@
 import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
-    <div className="flex justify-between items-center border border-black">
-      <div>
-        <h1 className="text-2xl font-bold">Portfolio</h1>
-      </div>
-      <div className="p-4">
-        <ul className="flex font-bold">
-          <Link>
-            <li className="m-3 bg-orange-200 cursor-pointer py-1 px-2 rounded-md text-lg">
+    <header className="flex justify-between items-center border-b border-gray-300 px-6 py-4 shadow-sm">
+      {/* Logo / Brand */}
+      <h1 className="text-2xl font-bold text-indigo-700">Portfolio</h1>
+
+      {/* Navigation Links */}
+      <nav>
+        <ul className="flex space-x-4 font-bold text-lg">
+          <li>
+            <Link
+              to="/"
+              className="px-3 py-1 rounded-md hover:bg-orange-200 transition"
+            >
               Home
-            </li>
-          </Link>
-          <li className="m-3 hover:bg-orange-200 cursor-pointer py-1 px-2 rounded-md text-lg">
-            <Link to="/about">About</Link>
+            </Link>
           </li>
-          <li className="m-3 hover:bg-orange-200 cursor-pointer  py-1 px-2 rounded-md text-lg">
-            <Link to="/skills">Skills</Link>
+          <li>
+            <Link
+              to="/about"
+              className="px-3 py-1 rounded-md hover:bg-orange-200 transition"
+            >
+              About
+            </Link>
           </li>
-          <li className="m-3 hover:bg-orange-200 cursor-pointer py-1 px-2 rounded-md text-lg">
-            <Link to="/services">Services</Link>
+          <li>
+            <Link
+              to="/skills"
+              className="px-3 py-1 rounded-md hover:bg-orange-200 transition"
+            >
+              Skills
+            </Link>
           </li>
-          <li className="m-3 hover:bg-orange-200 cursor-pointer font-bold py-1 px-2 rounded-md text-lg">
-            <Link to="/projects">Projects</Link>
+         {/* <li>
+            <Link
+              to="/services"
+              className="px-3 py-1 rounded-md hover:bg-orange-200 transition"
+            >
+              Services
+            </Link>
+          </li> */}
+          <li>
+            <Link
+              to="/projects"
+              className="px-3 py-1 rounded-md hover:bg-orange-200 transition"
+            >
+              Projects
+            </Link>
           </li>
         </ul>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
 
